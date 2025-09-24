@@ -19,8 +19,8 @@ class mytqdm(tqdm):
         self.api_key = api_key
         self.title = title
         self.mytqdm_id = HRID().generate()
-        tqdm_url = PROGRESS_URL + "/" + self.mytqdm_id
-        logger.info(f"Use the following url to get your tqdm progress: {tqdm_url}")
+        tqdm_url = self.PROGRESS_URL + "/" + self.mytqdm_id
+        logging.info(f"Use the following url to get your tqdm progress: {tqdm_url}")
         with open('mytqdm_id.txt', 'w') as f:
             f.write(tqdm_url)
         super().__init__(iterable=iterable, **kwargs)
@@ -39,7 +39,7 @@ class mytqdm(tqdm):
                 "progress": current,
                 "total": total,
             }
-            resp = requests.post(PROGRESS_URL, json=payload, headers=headers, timeout=10)
+            resp = requests.post(self.PROGRESS_URL, json=payload, headers=headers, timeout=10)
             if resp.ok:
                 logging.debug("mytqdm state successfully updated.")
             else:

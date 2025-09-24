@@ -1,5 +1,5 @@
 # MyTqdm
-See and share your tqdm state everywhere with everyone on [mytqdm.ai](https://mytqdm.ai)!
+See and share your tqdm state everywhere with everyone on [mytqdm.app](https://mytqdm.app)!
 
 <a href="https://www.buymeacoffee.com/padmalcom" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
@@ -7,7 +7,7 @@ See and share your tqdm state everywhere with everyone on [mytqdm.ai](https://my
 ```pip install mytqdm```
 
 ## Registration
-Register an account on [mytqdm.ai](https://mytqdm.ai) to obtain your custom API key.
+Register an account on [mytqdm.app](https://mytqdm.app) to obtain your custom API key.
 
 ## Usage
 - Import via ```from mytqdm import mytqdm``` and use ```mytqdm``` instead of ```tqdm```.

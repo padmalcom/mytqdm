@@ -5,11 +5,11 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mytqdm",
-    version="1.0.1",
+    version="1.0.5",
 	license="MIT",
     author="Jonas Freiknecht",
     author_email="j.freiknecht@googlemail.com",
-    description="mytqdm is a wrapper around tqdm that allows to see and share your progress on https://mytqdm.ai",
+    description="mytqdm is a wrapper around tqdm that allows to see and share your progress on https://mytqdm.app",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/padmalcom/mytqdm",
