@@ -18,11 +18,6 @@ class mytqdm(tqdm):
     ):
         self.api_key = api_key
         self.title = title
-        self.mytqdm_id = HRID().generate()
-        tqdm_url = self.PROGRESS_URL + "/" + self.mytqdm_id
-        logging.info(f"Use the following url to get your tqdm progress: {tqdm_url}")
-        with open('mytqdm_id.txt', 'w') as f:
-            f.write(tqdm_url)
         super().__init__(iterable=iterable, **kwargs)
         
     def update(self, n: int = 1) -> bool:

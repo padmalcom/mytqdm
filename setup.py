@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mytqdm",
-    version="1.0.5",
+    version="1.0.6",
 	license="MIT",
     author="Jonas Freiknecht",
     author_email="j.freiknecht@googlemail.com",
