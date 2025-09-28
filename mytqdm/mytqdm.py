@@ -2,11 +2,10 @@ from typing import Optional, Any, Iterable
 from tqdm import tqdm
 import requests
 import logging
-from hrid import HRID
 
 class mytqdm(tqdm):
     
-    PROGRESS_URL = "https://mytqdm.ai/progress"
+    PROGRESS_URL = "https://mytqdm.app/api/v1/p"
     
     def __init__(
         self,
@@ -26,12 +25,12 @@ class mytqdm(tqdm):
         total = self.total    
         if displayed:
             headers = {
-                "Authorization": f"X-API-Key {api_key}",
+                "Authorization": f"X-API-Key {self.api_key}",
                 "Accept": "application/json",
             }
             payload = {
                 "title": self.title,
-                "progress": current,
+                "current": current,
                 "total": total,
             }
             resp = requests.post(self.PROGRESS_URL, json=payload, headers=headers, timeout=10)

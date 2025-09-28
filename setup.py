@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mytqdm",
-    version="1.0.6",
+    version="1.0.9",
 	license="MIT",
     author="Jonas Freiknecht",
     author_email="j.freiknecht@googlemail.com",
@@ -16,8 +16,7 @@ setup(
     packages=find_packages(exclude=("tests", "requirements.txt",)),
 	include_package_data=True,
 	install_requires=[
-        "tqdm>=4.67.1",
-        "hrid>=0.3.0"
+        "tqdm>=4.67.1"
 	],
     classifiers=[
         "Development Status :: 4 - Beta",
