@@ -37,5 +37,5 @@ class mytqdm(tqdm):
             if resp.ok:
                 logging.debug("mytqdm state successfully updated.")
             else:
-                logging.warn(f"Got non-ok response from mytqdm {resp.status_code}")
+                logging.warning(f"Got non-ok response from mytqdm {resp.status_code}")
         return displayed
