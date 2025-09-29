@@ -2,11 +2,10 @@ from typing import Optional, Any, Iterable
 from tqdm import tqdm
 import requests
 import logging
-from hrid import HRID
 
 class mytqdm(tqdm):
     
-    PROGRESS_URL = "https://mytqdm.ai/progress"
+    PROGRESS_URL = "https://mytqdm.app/api/v1/p"
     
     def __init__(
         self,
@@ -18,11 +17,6 @@ class mytqdm(tqdm):
     ):
         self.api_key = api_key
         self.title = title
-        self.mytqdm_id = HRID().generate()
-        tqdm_url = PROGRESS_URL + "/" + self.mytqdm_id
-        logger.info(f"Use the following url to get your tqdm progress: {tqdm_url}")
-        with open('mytqdm_id.txt', 'w') as f:
-            f.write(tqdm_url)
         super().__init__(iterable=iterable, **kwargs)
         
     def update(self, n: int = 1) -> bool:
@@ -31,15 +25,15 @@ class mytqdm(tqdm):
         total = self.total    
         if displayed:
             headers = {
-                "Authorization": f"X-API-Key {api_key}",
+                "Authorization": f"X-API-Key {self.api_key}",
                 "Accept": "application/json",
             }
             payload = {
                 "title": self.title,
-                "progress": current,
+                "current": current,
                 "total": total,
             }
-            resp = requests.post(PROGRESS_URL, json=payload, headers=headers, timeout=10)
+            resp = requests.post(self.PROGRESS_URL, json=payload, headers=headers, timeout=10)
             if resp.ok:
                 logging.debug("mytqdm state successfully updated.")
             else:
