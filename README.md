@@ -1,7 +1,10 @@
 # MyTqdm
 See and share your tqdm state everywhere with everyone on [mytqdm.app](https://mytqdm.app)!
 
-<a href="https://www.buymeacoffee.com/padmalcom" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+## Support
+Writing software takes time. I'd be happy to get your support.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Y8Y11M25J7)
 
 ## Installation
 ```pip install mytqdm```
